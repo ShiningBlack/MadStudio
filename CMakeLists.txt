@@ -12,13 +12,31 @@ qt_add_executable(MadStudio
     studiomainwindow.cpp
     studiomainwindow.h
     studiomainwindow.ui
+    demowindow.cpp
+    demowindow.h
+    demowindow.ui
+    pages/flowlayoutpage.cpp
+    pages/flowlayoutpage.h
+    pages/flowlayoutpage.ui
+    pages/cardpage.cpp
+    pages/cardpage.h
+    pages/cardpage.ui
+    pages/toastpage.cpp
+    pages/toastpage.h
+    pages/toastpage.ui
+    pages/searchboxpage.cpp
+    pages/searchboxpage.h
+    pages/searchboxpage.ui
+    pages/buttonpage.cpp
+    pages/buttonpage.h
+    pages/buttonpage.ui
     resource/app.qrc
     resource/app.rc
+    IFLOW.md
 )
 
 # 包含 madwidgets 源码
 add_subdirectory(madwidgets)
-# add_madwidgets_sources(MadStudio)  # 注入 flowlayout.cpp 和头文件路径
 
 target_link_libraries(MadStudio
     PRIVATE
