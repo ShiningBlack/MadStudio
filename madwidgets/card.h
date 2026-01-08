@@ -1,5 +1,5 @@
-#ifndef CARDWIDGET_H
-#define CARDWIDGET_H
+#ifndef CARD_H
+#define CARD_H
 
 #include <QFrame>
 #include <QLabel>
@@ -16,7 +16,7 @@ namespace Mad {
  * 
  * 提供现代化的卡片样式，支持阴影、圆角和悬停效果
  */
-class CardWidget : public QFrame
+class Card : public QFrame
 {
     Q_OBJECT
     Q_PROPERTY(int borderRadius READ borderRadius WRITE setBorderRadius NOTIFY borderRadiusChanged)
@@ -24,8 +24,8 @@ class CardWidget : public QFrame
     Q_PROPERTY(bool clickable READ isClickable WRITE setClickable NOTIFY clickableChanged)
 
 public:
-    explicit CardWidget(QWidget *parent = nullptr);
-    ~CardWidget();
+    explicit Card(QWidget *parent = nullptr);
+    ~Card();
 
     // 标题和内容
     void setTitle(const QString &title);
@@ -73,4 +73,4 @@ private:
 
 } // namespace Mad
 
-#endif // CARDWIDGET_H
+#endif // CARD_H

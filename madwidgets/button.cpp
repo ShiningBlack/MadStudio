@@ -1,11 +1,11 @@
-#include "modernbutton.h"
+#include "button.h"
 #include <QPainter>
 #include <QPaintEvent>
 #include <QDebug>
 
 namespace Mad {
 
-ModernButton::ModernButton(const QString &text, QWidget *parent)
+Button::Button(const QString &text, QWidget *parent)
     : QPushButton(text, parent)
     , m_buttonType(ButtonType::Primary)
     , m_borderRadius(6)
@@ -16,16 +16,16 @@ ModernButton::ModernButton(const QString &text, QWidget *parent)
     updateStyle();
 }
 
-ModernButton::~ModernButton()
+Button::~Button()
 {
 }
 
-ButtonType ModernButton::buttonType() const
+ButtonType Button::buttonType() const
 {
     return m_buttonType;
 }
 
-void ModernButton::setButtonType(ButtonType type)
+void Button::setButtonType(ButtonType type)
 {
     if (m_buttonType != type) {
         m_buttonType = type;
@@ -34,12 +34,12 @@ void ModernButton::setButtonType(ButtonType type)
     }
 }
 
-int ModernButton::borderRadius() const
+int Button::borderRadius() const
 {
     return m_borderRadius;
 }
 
-void ModernButton::setBorderRadius(int radius)
+void Button::setBorderRadius(int radius)
 {
     if (m_borderRadius != radius) {
         m_borderRadius = radius;
@@ -48,12 +48,12 @@ void ModernButton::setBorderRadius(int radius)
     }
 }
 
-bool ModernButton::isLoading() const
+bool Button::isLoading() const
 {
     return m_isLoading;
 }
 
-void ModernButton::setIsLoading(bool loading)
+void Button::setIsLoading(bool loading)
 {
     if (m_isLoading != loading) {
         m_isLoading = loading;
@@ -63,18 +63,18 @@ void ModernButton::setIsLoading(bool loading)
     }
 }
 
-void ModernButton::setIconText(const QString &icon)
+void Button::setIconText(const QString &icon)
 {
     m_iconText = icon;
     update();
 }
 
-void ModernButton::updateStyle()
+void Button::updateStyle()
 {
     setStyleSheet(getButtonStyle());
 }
 
-QString ModernButton::getButtonStyle()
+QString Button::getButtonStyle()
 {
     QString backgroundColor;
     QString hoverColor;
@@ -170,7 +170,7 @@ QString ModernButton::getButtonStyle()
      .arg(hoverColor, pressedColor, disabledStyle);
 }
 
-void ModernButton::paintEvent(QPaintEvent *event)
+void Button::paintEvent(QPaintEvent *event)
 {
     QPushButton::paintEvent(event);
 }

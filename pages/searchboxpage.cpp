@@ -1,6 +1,6 @@
 #include "searchboxpage.h"
 #include "ui_searchboxpage.h"
-#include "modernsearchbox.h"
+#include "searchbox.h"
 
 SearchBoxPage::SearchBoxPage(QWidget *parent)
     : QWidget(parent)
@@ -9,7 +9,7 @@ SearchBoxPage::SearchBoxPage(QWidget *parent)
     ui->setupUi(this);
     
     // 创建基本搜索框
-    Mad::ModernSearchBox *basicSearch = new Mad::ModernSearchBox(this);
+    Mad::SearchBox *basicSearch = new Mad::SearchBox(this);
     basicSearch->setPlaceholderText("输入关键词搜索...");
 
     if (!ui->basicSearchWidget) {
@@ -26,12 +26,12 @@ SearchBoxPage::SearchBoxPage(QWidget *parent)
         ui->basicSearchWidget->layout()->addWidget(basicSearch);
     }
     
-    connect(basicSearch, &Mad::ModernSearchBox::searchRequested, this, [this](const QString &text) {
+    connect(basicSearch, &Mad::SearchBox::searchRequested, this, [this](const QString &text) {
         ui->resultTextEdit->append(QString("基本搜索: %1").arg(text));
     });
     
     // 创建带自动补全的搜索框
-    Mad::ModernSearchBox *completionSearch = new Mad::ModernSearchBox(this);
+    Mad::SearchBox *completionSearch = new Mad::SearchBox(this);
     completionSearch->setPlaceholderText("输入内容查看自动补全...");
     completionSearch->setCompletionItems({
         "Apple", "Banana", "Cherry", "Date", "Elderberry",
@@ -50,7 +50,7 @@ SearchBoxPage::SearchBoxPage(QWidget *parent)
         ui->completionSearchWidget->layout()->addWidget(completionSearch);
     }
     
-    connect(completionSearch, &Mad::ModernSearchBox::searchRequested, this, [this](const QString &text) {
+    connect(completionSearch, &Mad::SearchBox::searchRequested, this, [this](const QString &text) {
         ui->resultTextEdit->append(QString("自动补全搜索: %1").arg(text));
     });
 }

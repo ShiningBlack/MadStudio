@@ -1,5 +1,5 @@
-#ifndef MODERNBUTTON_H
-#define MODERNBUTTON_H
+#ifndef BUTTON_H
+#define BUTTON_H
 
 #include <QPushButton>
 
@@ -20,7 +20,7 @@ enum class ButtonType {
  * 
  * 提供多种样式的现代化按钮，支持悬停、禁用和加载状态
  */
-class ModernButton : public QPushButton
+class Button : public QPushButton
 {
     Q_OBJECT
     Q_PROPERTY(ButtonType buttonType READ buttonType WRITE setButtonType NOTIFY buttonTypeChanged)
@@ -28,8 +28,8 @@ class ModernButton : public QPushButton
     Q_PROPERTY(bool isLoading READ isLoading WRITE setIsLoading NOTIFY isLoadingChanged)
 
 public:
-    explicit ModernButton(const QString &text = QString(), QWidget *parent = nullptr);
-    ~ModernButton();
+    explicit Button(const QString &text = QString(), QWidget *parent = nullptr);
+    ~Button();
 
     // 按钮类型
     ButtonType buttonType() const;
@@ -67,4 +67,4 @@ private:
 
 } // namespace Mad
 
-#endif // MODERNBUTTON_H
+#endif // BUTTON_H

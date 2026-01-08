@@ -3,18 +3,18 @@ project(madwidgets LANGUAGES CXX)
 
 set(MADWIDGETS_SOURCES
     flowlayout.cpp
-    cardwidget.cpp
+    card.cpp
     toastmanager.cpp
-    modernsearchbox.cpp
-    modernbutton.cpp
+    searchbox.cpp
+    button.cpp
 )
 
 set(MADWIDGETS_HEADERS
     flowlayout.h
-    cardwidget.h
+    card.h
     toastmanager.h
-    modernsearchbox.h
-    modernbutton.h
+    searchbox.h
+    button.h
 )
 
 # 可选：如果你希望编译成独立静态库（取消注释以下内容）

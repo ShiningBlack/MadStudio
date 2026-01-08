@@ -10,7 +10,6 @@ class SearchBoxPage;
 class SearchBoxPage : public QWidget
 {
     Q_OBJECT
-
 public:
     explicit SearchBoxPage(QWidget *parent = nullptr);
     ~SearchBoxPage();

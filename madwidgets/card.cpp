@@ -1,4 +1,4 @@
-#include "cardwidget.h"
+#include "card.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGraphicsDropShadowEffect>
@@ -9,7 +9,7 @@
 
 namespace Mad {
 
-CardWidget::CardWidget(QWidget *parent)
+Card::Card(QWidget *parent)
     : QFrame(parent)
     , m_titleLabel(nullptr)
     , m_contentLabel(nullptr)
@@ -23,11 +23,11 @@ CardWidget::CardWidget(QWidget *parent)
     updateShadow();
 }
 
-CardWidget::~CardWidget()
+Card::~Card()
 {
 }
 
-void CardWidget::setupUI()
+void Card::setupUI()
 {
     setMouseTracking(true);
     setMinimumWidth(200);
@@ -77,7 +77,7 @@ void CardWidget::setupUI()
     );
 }
 
-void CardWidget::updateShadow()
+void Card::updateShadow()
 {
     QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect(this);
     shadow->setBlurRadius(m_shadowRadius);
@@ -86,34 +86,34 @@ void CardWidget::updateShadow()
     setGraphicsEffect(shadow);
 }
 
-void CardWidget::setTitle(const QString &title)
+void Card::setTitle(const QString &title)
 {
     m_titleLabel->setText(title);
     m_titleLabel->setVisible(!title.isEmpty());
 }
 
-QString CardWidget::title() const
+QString Card::title() const
 {
     return m_titleLabel->text();
 }
 
-void CardWidget::setContent(const QString &content)
+void Card::setContent(const QString &content)
 {
     m_contentLabel->setText(content);
     m_contentLabel->setVisible(!content.isEmpty());
 }
 
-QString CardWidget::content() const
+QString Card::content() const
 {
     return m_contentLabel->text();
 }
 
-int CardWidget::borderRadius() const
+int Card::borderRadius() const
 {
     return m_borderRadius;
 }
 
-void CardWidget::setBorderRadius(int radius)
+void Card::setBorderRadius(int radius)
 {
     if (m_borderRadius != radius) {
         m_borderRadius = radius;
@@ -122,12 +122,12 @@ void CardWidget::setBorderRadius(int radius)
     }
 }
 
-int CardWidget::shadowRadius() const
+int Card::shadowRadius() const
 {
     return m_shadowRadius;
 }
 
-void CardWidget::setShadowRadius(int radius)
+void Card::setShadowRadius(int radius)
 {
     if (m_shadowRadius != radius) {
         m_shadowRadius = radius;
@@ -136,12 +136,12 @@ void CardWidget::setShadowRadius(int radius)
     }
 }
 
-bool CardWidget::isClickable() const
+bool Card::isClickable() const
 {
     return m_clickable;
 }
 
-void CardWidget::setClickable(bool clickable)
+void Card::setClickable(bool clickable)
 {
     if (m_clickable != clickable) {
         m_clickable = clickable;
@@ -150,14 +150,14 @@ void CardWidget::setClickable(bool clickable)
     }
 }
 
-void CardWidget::addWidget(QWidget *widget)
+void Card::addWidget(QWidget *widget)
 {
     if (widget) {
         m_contentLayout->addWidget(widget);
     }
 }
 
-void CardWidget::clearWidgets()
+void Card::clearWidgets()
 {
     while (QLayoutItem *item = m_contentLayout->takeAt(0)) {
         if (QWidget *widget = item->widget()) {
@@ -167,21 +167,21 @@ void CardWidget::clearWidgets()
     }
 }
 
-void CardWidget::enterEvent(QEnterEvent *event)
+void Card::enterEvent(QEnterEvent *event)
 {
     QFrame::enterEvent(event);
     m_isHovered = true;
     update();
 }
 
-void CardWidget::leaveEvent(QEvent *event)
+void Card::leaveEvent(QEvent *event)
 {
     QFrame::leaveEvent(event);
     m_isHovered = false;
     update();
 }
 
-void CardWidget::mousePressEvent(QMouseEvent *event)
+void Card::mousePressEvent(QMouseEvent *event)
 {
     QFrame::mousePressEvent(event);
     if (m_clickable && event->button() == Qt::LeftButton) {
@@ -189,7 +189,7 @@ void CardWidget::mousePressEvent(QMouseEvent *event)
     }
 }
 
-void CardWidget::paintEvent(QPaintEvent *event)
+void Card::paintEvent(QPaintEvent *event)
 {
     QFrame::paintEvent(event);
 

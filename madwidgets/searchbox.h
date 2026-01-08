@@ -1,5 +1,5 @@
-#ifndef MODERNSEARCHBOX_H
-#define MODERNSEARCHBOX_H
+#ifndef SEARCHBOX_H
+#define SEARCHBOX_H
 
 #include <QWidget>
 #include <QLineEdit>
@@ -11,19 +11,19 @@
 namespace Mad {
 
 /**
- * @brief 现代搜索框组件
+ * @brief 搜索框组件
  * 
  * 提供现代化的搜索框，支持搜索图标、清除按钮和自动补全
  */
-class ModernSearchBox : public QWidget
+class SearchBox : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(QString placeholderText READ placeholderText WRITE setPlaceholderText NOTIFY placeholderTextChanged)
     Q_PROPERTY(int borderRadius READ borderRadius WRITE setBorderRadius NOTIFY borderRadiusChanged)
 
 public:
-    explicit ModernSearchBox(QWidget *parent = nullptr);
-    ~ModernSearchBox();
+    explicit SearchBox(QWidget *parent = nullptr);
+    ~SearchBox();
 
     // 文本相关
     QString text() const;
@@ -68,4 +68,4 @@ private:
 
 } // namespace Mad
 
-#endif // MODERNSEARCHBOX_H
+#endif // SEARCHBOX_H

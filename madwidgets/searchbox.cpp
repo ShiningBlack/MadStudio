@@ -1,4 +1,4 @@
-#include "modernsearchbox.h"
+#include "searchbox.h"
 #include <QHBoxLayout>
 #include <QPainter>
 #include <QEvent>
@@ -6,7 +6,7 @@
 
 namespace Mad {
 
-ModernSearchBox::ModernSearchBox(QWidget *parent)
+SearchBox::SearchBox(QWidget *parent)
     : QWidget(parent)
     , m_borderRadius(8)
     , m_placeholderText("搜索...")
@@ -15,11 +15,11 @@ ModernSearchBox::ModernSearchBox(QWidget *parent)
     applyStyle();
 }
 
-ModernSearchBox::~ModernSearchBox()
+SearchBox::~SearchBox()
 {
 }
 
-void ModernSearchBox::setupUI()
+void SearchBox::setupUI()
 {
     // 创建布局
     QHBoxLayout *layout = new QHBoxLayout(this);
@@ -75,7 +75,7 @@ void ModernSearchBox::setupUI()
     setMinimumHeight(40);
 }
 
-void ModernSearchBox::applyStyle()
+void SearchBox::applyStyle()
 {
     setStyleSheet(QString(
         "ModernSearchBox {"
@@ -105,29 +105,29 @@ void ModernSearchBox::applyStyle()
     ));
 }
 
-QString ModernSearchBox::text() const
+QString SearchBox::text() const
 {
     return m_lineEdit->text();
 }
 
-void ModernSearchBox::setText(const QString &text)
+void SearchBox::setText(const QString &text)
 {
     m_lineEdit->setText(text);
     updateClearButtonVisibility();
 }
 
-void ModernSearchBox::clear()
+void SearchBox::clear()
 {
     m_lineEdit->clear();
     updateClearButtonVisibility();
 }
 
-QString ModernSearchBox::placeholderText() const
+QString SearchBox::placeholderText() const
 {
     return m_placeholderText;
 }
 
-void ModernSearchBox::setPlaceholderText(const QString &text)
+void SearchBox::setPlaceholderText(const QString &text)
 {
     if (m_placeholderText != text) {
         m_placeholderText = text;
@@ -136,12 +136,12 @@ void ModernSearchBox::setPlaceholderText(const QString &text)
     }
 }
 
-int ModernSearchBox::borderRadius() const
+int SearchBox::borderRadius() const
 {
     return m_borderRadius;
 }
 
-void ModernSearchBox::setBorderRadius(int radius)
+void SearchBox::setBorderRadius(int radius)
 {
     if (m_borderRadius != radius) {
         m_borderRadius = radius;
@@ -150,27 +150,27 @@ void ModernSearchBox::setBorderRadius(int radius)
     }
 }
 
-void ModernSearchBox::setCompletionMode(QCompleter::CompletionMode mode)
+void SearchBox::setCompletionMode(QCompleter::CompletionMode mode)
 {
     m_completer->setCompletionMode(mode);
 }
 
-void ModernSearchBox::setCompletionItems(const QStringList &items)
+void SearchBox::setCompletionItems(const QStringList &items)
 {
     m_completionModel->setStringList(items);
 }
 
-void ModernSearchBox::updateClearButtonVisibility()
+void SearchBox::updateClearButtonVisibility()
 {
     m_clearButton->setVisible(!m_lineEdit->text().isEmpty());
 }
 
-void ModernSearchBox::resizeEvent(QResizeEvent *event)
+void SearchBox::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
 }
 
-void ModernSearchBox::paintEvent(QPaintEvent *event)
+void SearchBox::paintEvent(QPaintEvent *event)
 {
     QWidget::paintEvent(event);
 }
