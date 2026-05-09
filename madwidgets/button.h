@@ -26,7 +26,6 @@ class Button : public QPushButton
     Q_PROPERTY(ButtonType buttonType READ buttonType WRITE setButtonType NOTIFY buttonTypeChanged)
     Q_PROPERTY(int borderRadius READ borderRadius WRITE setBorderRadius NOTIFY borderRadiusChanged)
     Q_PROPERTY(bool isLoading READ isLoading WRITE setIsLoading NOTIFY isLoadingChanged)
-
 public:
     explicit Button(const QString &text = QString(), QWidget *parent = nullptr);
     ~Button();

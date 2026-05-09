@@ -38,7 +38,7 @@ ToastPage::ToastPage(QWidget *parent)
         "QPushButton:hover {"
         "    background-color: #1976D2;"
         "}"
-    );
+        );
     connect(infoButton, &QPushButton::clicked, this, &ToastPage::onShowInfoClicked);
     buttonsLayout->addWidget(infoButton);
 
@@ -56,7 +56,7 @@ ToastPage::ToastPage(QWidget *parent)
         "QPushButton:hover {"
         "    background-color: #388E3C;"
         "}"
-    );
+        );
     connect(successButton, &QPushButton::clicked, this, &ToastPage::onShowSuccessClicked);
     buttonsLayout->addWidget(successButton);
 
@@ -74,7 +74,7 @@ ToastPage::ToastPage(QWidget *parent)
         "QPushButton:hover {"
         "    background-color: #F57C00;"
         "}"
-    );
+        );
     connect(warningButton, &QPushButton::clicked, this, &ToastPage::onShowWarningClicked);
     buttonsLayout->addWidget(warningButton);
 
@@ -92,7 +92,7 @@ ToastPage::ToastPage(QWidget *parent)
         "QPushButton:hover {"
         "    background-color: #D32F2F;"
         "}"
-    );
+        );
     connect(errorButton, &QPushButton::clicked, this, &ToastPage::onShowErrorClicked);
     buttonsLayout->addWidget(errorButton);
 
@@ -110,7 +110,7 @@ ToastPage::ToastPage(QWidget *parent)
         "QPushButton:hover {"
         "    background-color: #7B1FA2;"
         "}"
-    );
+        );
     connect(multipleButton, &QPushButton::clicked, this, &ToastPage::onShowMultipleClicked);
     buttonsLayout->addWidget(multipleButton);
 

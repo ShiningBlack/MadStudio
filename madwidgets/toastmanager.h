@@ -25,7 +25,6 @@ enum class ToastType {
 class ToastManager : public QObject
 {
     Q_OBJECT
-
 public:
     static ToastManager *instance();
     

@@ -15,7 +15,6 @@ QT_END_NAMESPACE
 class ToastPage : public QWidget
 {
     Q_OBJECT
-
 public:
     explicit ToastPage(QWidget *parent = nullptr);
     ~ToastPage();

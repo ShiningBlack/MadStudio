@@ -17,7 +17,6 @@ QT_END_NAMESPACE
 class DemoWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit DemoWindow(QWidget *parent = nullptr);
     ~DemoWindow();

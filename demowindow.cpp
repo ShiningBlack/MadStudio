@@ -24,14 +24,14 @@ DemoWindow::DemoWindow(QWidget *parent)
         "    padding: 12px 16px;"
         // "    border-bottom: 1px solid #e0e0e0;"
         "}"
-    //     "QListWidget::item:hover {"
-    //     "    background-color: #e8e8e8;"
-    //     "}"
-    //     "QListWidget::item:selected {"
-    //     "    background-color: #0078d4;"
-    //     "    color: white;"
-    //     "}"
-    );
+        //     "QListWidget::item:hover {"
+        //     "    background-color: #e8e8e8;"
+        //     "}"
+        //     "QListWidget::item:selected {"
+        //     "    background-color: #0078d4;"
+        //     "    color: white;"
+        //     "}"
+        );
 
     // 创建页面堆栈
     QStackedWidget *stackedWidget = new QStackedWidget(this);

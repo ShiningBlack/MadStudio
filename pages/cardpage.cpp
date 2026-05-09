@@ -54,7 +54,7 @@ CardPage::CardPage(QWidget *parent)
         "QPushButton:hover {"
         "    background-color: #106ebe;"
         "}"
-    );
+        );
     connect(actionButton, &QPushButton::clicked, []() {
         qDebug() << "按钮被点击了！";
     });

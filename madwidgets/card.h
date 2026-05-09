@@ -22,7 +22,6 @@ class Card : public QFrame
     Q_PROPERTY(int borderRadius READ borderRadius WRITE setBorderRadius NOTIFY borderRadiusChanged)
     Q_PROPERTY(int shadowRadius READ shadowRadius WRITE setShadowRadius NOTIFY shadowRadiusChanged)
     Q_PROPERTY(bool clickable READ isClickable WRITE setClickable NOTIFY clickableChanged)
-
 public:
     explicit Card(QWidget *parent = nullptr);
     ~Card();

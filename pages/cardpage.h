@@ -15,7 +15,6 @@ QT_END_NAMESPACE
 class CardPage : public QWidget
 {
     Q_OBJECT
-
 public:
     explicit CardPage(QWidget *parent = nullptr);
     ~CardPage();

@@ -19,7 +19,6 @@ class DemoWindow;
 class MadStudioMainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     MadStudioMainWindow(QWidget *parent = nullptr);
     ~MadStudioMainWindow();

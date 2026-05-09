@@ -12,7 +12,6 @@ class ButtonPage;
 class ButtonPage : public QWidget
 {
     Q_OBJECT
-
 public:
     explicit ButtonPage(QWidget *parent = nullptr);
     ~ButtonPage();

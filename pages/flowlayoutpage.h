@@ -17,7 +17,6 @@ QT_END_NAMESPACE
 class FlowLayoutPage : public QWidget
 {
     Q_OBJECT
-
 public:
     explicit FlowLayoutPage(QWidget *parent = nullptr);
     ~FlowLayoutPage();
